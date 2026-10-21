@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ứng dụng mở tài khoản phái sinh VN30 kết nối Kim Thương</title>
+<meta name="description" content="Tìm hiểu ứng dụng mở tài khoản giao dịch phái sinh VN30 kết nối với website Kim Thương: tính năng, các bước đăng ký, hồ sơ cần chuẩn bị và lưu ý.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://vn30fkimthuong.github.io/tai-ung-dung.html">
+<meta property="og:title" content="Ứng dụng mở tài khoản phái sinh VN30 kết nối Kim Thương">
+<meta property="og:description" content="Hướng dẫn tính năng và các bước mở tài khoản phái sinh VN30 trên ứng dụng kết nối với website Kim Thương.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vn30fkimthuong.github.io/tai-ung-dung.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Bricolage+Grotesque:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --p:#7635c4; --p-deep:#2a0f4d; --p-dark:#431a78; --p-soft:#b891ec; --p-mist:#efe6fb; --p-paper:#faf7fe;
+  --gold:#ffc83d; --gold-deep:#8a6200; --green:#22b573; --green-deep:#0f6b44; --red:#ff6b6b;
+  --ink:#1d1230; --muted:#5d5075; --line:#e1d3f5; --bg:var(--p-paper); --card:#fff;
+  --fd:'Bricolage Grotesque','Be Vietnam Pro',system-ui,sans-serif; --fb:'Be Vietnam Pro',system-ui,sans-serif;
+}
+@media(prefers-color-scheme:dark){
+  :root{--bg:#160a29;--card:#22123b;--ink:#f3ecff;--muted:#bfb0da;--line:#3b2461;--p-mist:#2b1749;--gold-deep:#ffc83d;--green-deep:#4fd89c}
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:var(--fb);background:var(--bg);color:var(--ink);line-height:1.7;font-size:17px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{width:min(1120px,92%);margin-inline:auto}
+h1,h2,h3,h4{font-family:var(--fd);line-height:1.2;letter-spacing:-.01em}
+.btn{display:inline-block;padding:.85rem 1.6rem;border-radius:999px;font-weight:600;text-decoration:none;background:var(--gold);color:#2a0f4d;border:2px solid var(--gold);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 0 -2px rgba(42,15,77,.35)}
+.btn.ghost{background:transparent;color:#fff;border-color:var(--p-soft)}
+.btn.sm{padding:.5rem 1.15rem;font-size:.95rem}
+header{position:sticky;top:0;z-index:20;background:var(--p-deep);color:#fff;border-bottom:3px solid var(--gold)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:68px}
+.logo{font-family:var(--fd);font-weight:800;font-size:1.3rem;text-decoration:none;display:flex;align-items:center;gap:.55rem}
+.logo i{width:34px;height:34px;border-radius:9px;background:var(--p);display:grid;place-items:center;font-style:normal;color:var(--gold);font-size:.8rem;border:2px solid var(--p-soft)}
+.logo span{color:var(--gold)}
+nav ul{list-style:none;padding:0;display:flex;gap:.2rem;align-items:center}
+nav a{text-decoration:none;padding:.5rem .85rem;border-radius:8px;font-size:.96rem;color:#e8dcfa}
+nav a:hover,nav a[aria-current]{background:var(--p-dark);color:#fff}
+nav a.btn{color:#2a0f4d;background:var(--gold)}
+#tog{display:none}
+.burger{display:none;cursor:pointer;font-size:1.6rem;padding:.3rem .6rem}
+
+.hero{background:radial-gradient(900px 500px at 85% 10%,#5a22a0 0,transparent 60%),var(--p-deep);color:#fff;padding:3.5rem 0 4.5rem;overflow:hidden}
+.crumb{font-size:.9rem;color:var(--p-soft);margin-bottom:1.4rem}
+.crumb a{text-decoration:none}
+.crumb a:hover{color:var(--gold)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
+.hero h1{font-size:clamp(2rem,4.4vw,3.2rem);font-weight:800}
+.hero p.lead{margin:1.2rem 0 1.8rem;color:#dccdf5;max-width:54ch;font-size:1.08rem}
+.cta{display:flex;gap:.8rem;flex-wrap:wrap}
+.phone{justify-self:center;width:250px;aspect-ratio:9/17;background:#1b0a33;border-radius:36px;border:8px solid #12062a;padding:1.3rem 1rem;color:#fff;box-shadow:14px 14px 0 var(--gold);transform:rotate(3deg)}
+.phone h4{font-size:1rem;margin-bottom:.8rem;color:var(--gold)}
+.row{display:flex;justify-content:space-between;background:var(--p-dark);border-radius:10px;padding:.55rem .75rem;margin-bottom:.5rem;font-size:.85rem}
+.row b{color:var(--green)}
+.row b.r{color:var(--red)}
+.pbtn{margin-top:.9rem;background:var(--green);color:#052b1a;text-align:center;border-radius:10px;padding:.55rem;font-weight:600;font-size:.9rem}
+.pnote{margin-top:.8rem;font-size:.7rem;color:#a58fcb;text-align:center}
+
+section{padding:4.5rem 0}
+.title{max-width:720px;margin-bottom:2.4rem}
+.title h2,.split h2{font-size:clamp(1.7rem,3.2vw,2.4rem);margin-bottom:.8rem}
+.title p{color:var(--muted)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.split p{color:var(--muted);margin-bottom:1rem}
+.split h3{font-size:1.25rem;margin-bottom:.8rem;color:var(--p)}
+@media(prefers-color-scheme:dark){.split h3{color:var(--p-soft)}}
+.mist{background:var(--p-mist)}
+.checks{list-style:none;padding:0}
+.checks li{padding-left:1.8rem;position:relative;margin-bottom:.5rem;color:var(--muted)}
+.checks li::before{content:"✓";position:absolute;left:0;color:var(--green-deep);font-weight:700}
+
+.feat{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem}
+.f{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.5rem;border-left:6px solid var(--p)}
+.f:nth-child(2){border-left-color:var(--gold)}
+.f:nth-child(3){border-left-color:var(--green)}
+.f:nth-child(4){border-left-color:var(--p-soft)}
+.f h3{font-size:1.2rem;margin-bottom:.4rem}
+.f h4{font-size:.95rem;color:var(--p);margin-bottom:.3rem}
+@media(prefers-color-scheme:dark){.f h4{color:var(--p-soft)}}
+.f p{color:var(--muted);font-size:.96rem}
+
+.steps{background:var(--p-deep);color:#fff}
+.steps .title p{color:#cdbbea}
+.flow{display:grid;gap:1.2rem;max-width:820px;counter-reset:s}
+.step{display:grid;grid-template-columns:52px 1fr;gap:1.1rem;counter-increment:s}
+.step::before{content:counter(s);display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--p);border:3px solid var(--gold);font-family:var(--fd);font-weight:800;font-size:1.3rem}
+.step h3{font-size:1.2rem;margin-bottom:.25rem}
+.step p{color:#cdbbea;font-size:.97rem}
+
+.docs{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+.doc{background:var(--card);border-radius:18px;padding:1.6rem;border:1px solid var(--line)}
+.doc h3{font-size:1.2rem;margin-bottom:.5rem}
+.doc h4{font-size:.98rem;margin:.9rem 0 .3rem;color:var(--p)}
+@media(prefers-color-scheme:dark){.doc h4{color:var(--p-soft)}}
+.doc p,.doc li{color:var(--muted);font-size:.96rem}
+.doc ul{padding-left:1.2rem}
+
+.warn{margin-top:1.6rem;padding:1.1rem 1.4rem;border:2px dashed var(--gold-deep);border-radius:14px;font-size:.95rem;color:var(--muted)}
+.warn b{color:var(--gold-deep)}
+.faq{max-width:820px}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:.8rem}
+details[open]{border-color:var(--p)}
+summary{cursor:pointer;list-style:none;padding:1.05rem 1.4rem;display:flex;justify-content:space-between;gap:1rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--p);font-size:1.4rem;line-height:1;transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+summary h3{font-size:1.05rem;font-weight:600;font-family:var(--fb)}
+details p{padding:0 1.4rem 1.2rem;color:var(--muted)}
+.final{background:var(--p);color:#fff;text-align:center;padding:4rem 0}
+.final h2{font-size:clamp(1.7rem,3.2vw,2.4rem);margin-bottom:.8rem}
+.final p{max-width:56ch;margin:0 auto 1.6rem;color:#eadcff}
+.final .cta{justify-content:center}
+footer{background:#12062a;color:#bfb0da;padding:3rem 0 2rem;font-size:.92rem}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem}
+footer h3{color:#fff;font-size:1.2rem;margin-bottom:.6rem}
+footer h4{color:var(--gold);font-size:1rem;margin-bottom:.6rem}
+footer ul{list-style:none;padding:0}
+footer li{margin-bottom:.35rem}
+footer a{text-decoration:none}
+footer a:hover{color:var(--gold)}
+.copy{grid-column:1/-1;border-top:1px solid #2f1a52;padding-top:1.2rem;font-size:.85rem}
+@media(max-width:860px){
+  .hero .wrap,.split,.feat,.docs,footer .wrap{grid-template-columns:1fr}
+  .phone{transform:none}
+  .burger{display:block}
+  nav{position:absolute;top:68px;left:0;right:0;background:var(--p-deep);display:none;padding:.8rem 4%}
+  nav ul{flex-direction:column;align-items:stretch}
+  #tog:checked~nav{display:block}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html" aria-label="VN30F Kim Thương - trang chủ"><i>30F</i>VN30F <span>Kim Thương</span></a>
+    <input type="checkbox" id="tog" aria-label="Mở menu">
+    <label for="tog" class="burger" aria-hidden="true">☰</label>
+    <nav aria-label="Menu chính">
+      <ul>
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="gioithieu.html">Giới thiệu</a></li>
+        <li><a href="hop-dong-tuong-lai-vn30-la-gi.html">Kiến thức giao dịch</a></li>
+        <li><a href="tin-tuc.html">Tin tức</a></li>
+        <li><a href="tai-ung-dung.html" aria-current="page">Tải ứng dụng</a></li>
+        <li><a href="faq.html">Câu hỏi thường gặp</a></li>
+        <li><a class="btn sm" href="https://hovica.io.vn/san-pham-dich-vu/" target="_blank" rel="noopener">Mở tài khoản</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="crumb"><a href="index.html">Trang chủ</a> / Tải ứng dụng</p>
+      <h1>Ứng dụng mở tài khoản phái sinh VN30 kết nối với Kim Thương</h1>
+      <p class="lead">Đây là ứng dụng kết nối với website Kim Thương, giúp nhà đầu tư đăng ký mở tài khoản giao dịch hợp đồng tương lai VN30 trực tuyến, ngay trên điện thoại.</p>
+      <div class="cta">
+        <a class="btn" href="https://hovica.io.vn/san-pham-dich-vu/" target="_blank" rel="noopener">Mở tài khoản và tải ứng dụng</a>
+        <a class="btn ghost" href="#cac-buoc">Xem các bước mở tài khoản</a>
+      </div>
+    </div>
+    <div class="phone" role="img" aria-label="Hình minh hoạ giao diện ứng dụng giao dịch phái sinh">
+      <h4>Tài khoản phái sinh</h4>
+      <div class="row"><span>VN30F2512</span><b>+8,2</b></div>
+      <div class="row"><span>VN30F2603</span><b class="r">−3,1</b></div>
+      <div class="row"><span>Ký quỹ khả dụng</span><b>Đủ</b></div>
+      <div class="pbtn">Đặt lệnh Long</div>
+      <p class="pnote">Hình minh hoạ, không phải giao diện thực tế</p>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="la-gi">
+  <div class="wrap split">
+    <div>
+      <h2 id="la-gi">Ứng dụng kết nối với website Kim Thương là gì?</h2>
+      <p>Đây là ứng dụng được liên kết với website VN30F Kim Thương để nhà đầu tư có thể chuyển từ việc tìm hiểu kiến thức sang bước mở tài khoản giao dịch phái sinh. Sau khi đọc các bài viết về hợp đồng tương lai VN30, bạn chỉ cần bấm nút mở tài khoản để được chuyển tới trang đăng ký.</p>
+      <p>Việc mở tài khoản, nhận ký quỹ và khớp lệnh do công ty chứng khoán được cấp phép thực hiện. Thủ tục chi tiết có thể khác nhau tuỳ đơn vị, vì vậy bạn nên đọc kỹ hướng dẫn trên ứng dụng trong quá trình đăng ký.</p>
+    </div>
+    <div>
+      <h3>Ứng dụng phù hợp với ai?</h3>
+      <ul class="checks">
+        <li>Nhà đầu tư đã tìm hiểu kiến thức về HĐTL VN30 và muốn mở tài khoản.</li>
+        <li>Người đang giao dịch cổ phiếu và muốn bổ sung tài khoản phái sinh.</li>
+        <li>Người muốn đăng ký trực tuyến, không cần đến quầy giao dịch.</li>
+      </ul>
+      <p>Nếu bạn chưa nắm rõ sản phẩm, hãy đọc bài <a href="hop-dong-tuong-lai-vn30-la-gi.html" style="color:var(--p);font-weight:600">Hợp đồng tương lai VN30 là gì</a> trước khi đăng ký.</p>
+    </div>
+  </div>
+</section>
+
+<section class="mist" aria-labelledby="tinh-nang">
+  <div class="wrap">
+    <div class="title">
+      <h2 id="tinh-nang">Tính năng chính của ứng dụng</h2>
+      <p>Các chức năng thường có trên ứng dụng giao dịch phái sinh. Chi tiết cụ thể phụ thuộc vào công ty chứng khoán cung cấp.</p>
+    </div>
+    <div class="feat">
+      <article class="f"><h3>Mở tài khoản trực tuyến</h3><h4>Đăng ký không cần đến quầy</h4><p>Điền thông tin và xác thực danh tính (eKYC) ngay trên điện thoại.</p></article>
+      <article class="f"><h3>Bảng giá phái sinh</h3><h4>Theo dõi hợp đồng VN30F</h4><p>Xem giá và biến động của các hợp đồng đang niêm yết.</p></article>
+      <article class="f"><h3>Đặt lệnh giao dịch</h3><h4>Mua (Long) hoặc bán (Short)</h4><p>Đặt lệnh và theo dõi trạng thái khớp lệnh trên cùng một nền tảng.</p></article>
+      <article class="f"><h3>Quản lý tài khoản</h3><h4>Ký quỹ, lãi lỗ và vị thế</h4><p>Theo dõi số dư ký quỹ, lãi lỗ và các vị thế đang nắm giữ.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="steps" id="cac-buoc" aria-labelledby="buoc">
+  <div class="wrap">
+    <div class="title">
+      <h2 id="buoc">Các bước mở tài khoản trên ứng dụng</h2>
+      <p>Quy trình tham khảo, có thể thay đổi tuỳ công ty chứng khoán.</p>
+    </div>
+    <div class="flow">
+      <div class="step"><div><h3>Bấm nút mở tài khoản</h3><p>Từ website Kim Thương, bấm nút "Mở tài khoản" để chuyển tới trang đăng ký.</p></div></div>
+      <div class="step"><div><h3>Tải và cài đặt ứng dụng</h3><p>Làm theo hướng dẫn trên trang để tải ứng dụng về điện thoại.</p></div></div>
+      <div class="step"><div><h3>Điền thông tin đăng ký</h3><p>Nhập họ tên, số điện thoại, email và các thông tin cá nhân được yêu cầu.</p></div></div>
+      <div class="step"><div><h3>Xác thực danh tính</h3><p>Chụp giấy tờ tuỳ thân và xác thực khuôn mặt theo hướng dẫn eKYC.</p></div></div>
+      <div class="step"><div><h3>Đăng ký giao dịch phái sinh</h3><p>Hoàn tất các cam kết, xác nhận hiểu rủi ro và chờ công ty chứng khoán duyệt.</p></div></div>
+      <div class="step"><div><h3>Nộp ký quỹ và giao dịch</h3><p>Sau khi tài khoản được kích hoạt, nộp ký quỹ theo yêu cầu và bắt đầu đặt lệnh.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="ho-so">
+  <div class="wrap">
+    <div class="title">
+      <h2 id="ho-so">Hồ sơ và điều kiện cần chuẩn bị</h2>
+      <p>Chuẩn bị sẵn giúp quá trình đăng ký diễn ra nhanh hơn.</p>
+    </div>
+    <div class="docs">
+      <article class="doc">
+        <h3>Giấy tờ và thông tin</h3>
+        <h4>Thường gồm</h4>
+        <ul><li>Căn cước công dân hoặc giấy tờ tuỳ thân hợp lệ</li><li>Số điện thoại và email đang sử dụng</li><li>Tài khoản ngân hàng đứng tên bạn</li></ul>
+      </article>
+      <article class="doc">
+        <h3>Điều kiện giao dịch</h3>
+        <h4>Có thể được yêu cầu</h4>
+        <ul><li>Đáp ứng điều kiện về kiến thức và kinh nghiệm đầu tư</li><li>Xác nhận hiểu rõ rủi ro của sản phẩm phái sinh</li><li>Nộp ký quỹ ban đầu theo quy định</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="mist" aria-labelledby="luu-y">
+  <div class="wrap">
+    <div class="title">
+      <h2 id="luu-y">Lưu ý trước khi mở tài khoản</h2>
+    </div>
+    <div class="split">
+      <div>
+        <h3>Hiểu rõ rủi ro</h3>
+        <p>Giao dịch phái sinh có đòn bẩy cao và có thể gây thua lỗ vượt quá số vốn ký quỹ. Chỉ nên tham gia khi bạn đã hiểu cơ chế ký quỹ, thanh toán hằng ngày và đáo hạn.</p>
+      </div>
+      <div>
+        <h3>Bảo mật thông tin cá nhân</h3>
+        <p>Chỉ đăng ký qua đường dẫn chính thức, không chia sẻ mã OTP, mật khẩu hay ảnh giấy tờ cho người lạ. Hãy kiểm tra kỹ thông tin trước khi gửi hồ sơ.</p>
+      </div>
+    </div>
+    <p class="warn"><b>Cảnh báo rủi ro:</b> nội dung trang này chỉ mang tính tham khảo, không phải khuyến nghị đầu tư. Hãy đối chiếu thông tin với quy định mới nhất của sở giao dịch và công ty chứng khoán.</p>
+  </div>
+</section>
+
+<section aria-labelledby="hoi-dap">
+  <div class="wrap">
+    <div class="title"><h2 id="hoi-dap">Câu hỏi nhanh về ứng dụng</h2></div>
+    <div class="faq">
+      <details open><summary><h3>Mở tài khoản trên ứng dụng có mất phí không?</h3></summary><p>Mức phí (nếu có) do công ty chứng khoán quy định. Bạn nên xem kỹ biểu phí trên ứng dụng trước khi hoàn tất đăng ký.</p></details>
+      <details><summary><h3>Mất bao lâu để tài khoản được kích hoạt?</h3></summary><p>Bạn có thể đăng ký trực tuyến trong ít phút, còn thời gian duyệt hồ sơ phụ thuộc vào công ty chứng khoán.</p></details>
+      <details><summary><h3>Tôi cần nộp bao nhiêu tiền ký quỹ?</h3></summary><p>Mức ký quỹ do công ty chứng khoán công bố và có thể thay đổi theo thời điểm. Bạn nên chuẩn bị vốn dư hơn mức tối thiểu.</p></details>
+      <details><summary><h3>Tôi cần tìm hiểu thêm ở đâu?</h3></summary><p>Bạn có thể xem trang <a href="faq.html" style="color:var(--p);font-weight:600">câu hỏi thường gặp</a> hoặc đọc các bài viết trong mục <a href="tin-tuc.html" style="color:var(--p);font-weight:600">tin tức</a>.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Sẵn sàng mở tài khoản phái sinh VN30?</h2>
+    <p>Bấm nút bên dưới để chuyển tới trang đăng ký và làm theo hướng dẫn trên ứng dụng.</p>
+    <div class="cta">
+      <a class="btn" href="https://hovica.io.vn/san-pham-dich-vu/" target="_blank" rel="noopener">Mở tài khoản VN30F</a>
+      <a class="btn ghost" href="index.html">Về trang chủ</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h3>VN30F Kim Thương</h3>
+      <p>Chia sẻ kiến thức hợp đồng tương lai VN30 và kết nối mở tài khoản phái sinh cho nhà đầu tư Việt Nam.</p>
+    </div>
+    <div>
+      <h4>Điều hướng</h4>
+      <ul><li><a href="index.html">Trang chủ</a></li><li><a href="gioithieu.html">Giới thiệu</a></li><li><a href="hop-dong-tuong-lai-vn30-la-gi.html">Kiến thức giao dịch</a></li><li><a href="tin-tuc.html">Tin tức</a></li><li><a href="tai-ung-dung.html">Tải ứng dụng</a></li><li><a href="faq.html">Câu hỏi thường gặp</a></li></ul>
+    </div>
+    <div>
+      <h4>Liên hệ</h4>
+      <ul><li>Zalo/Hotline: 09xx xxx xxx</li><li>Email: lienhe@vn30fkimthuong.com</li><li><a href="https://hovica.io.vn/san-pham-dich-vu/" target="_blank" rel="noopener">Mở tài khoản</a></li></ul>
+    </div>
+    <p class="copy">© 2026 VN30F Kim Thương. Đầu tư phái sinh có rủi ro cao; nội dung chỉ mang tính tham khảo, không phải lời khuyên đầu tư.</p>
+  </div>
+</footer>
+</body>
+</html>
