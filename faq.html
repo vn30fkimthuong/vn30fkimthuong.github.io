@@ -23,105 +23,8 @@
 ]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Bricolage+Grotesque:wght@600;800&display=swap" rel="stylesheet">
-<style>
-:root{
-  --p:#7635c4; --p-deep:#2a0f4d; --p-dark:#431a78; --p-soft:#b891ec; --p-mist:#efe6fb; --p-paper:#faf7fe;
-  --gold:#ffc83d; --gold-deep:#8a6200; --green:#22b573; --green-deep:#0f6b44;
-  --ink:#1d1230; --muted:#5d5075; --line:#e1d3f5; --bg:var(--p-paper); --card:#fff;
-  --fd:'Bricolage Grotesque','Be Vietnam Pro',system-ui,sans-serif; --fb:'Be Vietnam Pro',system-ui,sans-serif;
-}
-@media(prefers-color-scheme:dark){
-  :root{--bg:#160a29;--card:#22123b;--ink:#f3ecff;--muted:#bfb0da;--line:#3b2461;--p-mist:#2b1749;--gold-deep:#ffc83d;--green-deep:#4fd89c}
-}
-*{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{font-family:var(--fb);background:var(--bg);color:var(--ink);line-height:1.7;font-size:17px}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
-.wrap{width:min(1120px,92%);margin-inline:auto}
-h1,h2,h3,h4{font-family:var(--fd);line-height:1.2;letter-spacing:-.01em}
-.btn{display:inline-block;padding:.85rem 1.6rem;border-radius:999px;font-weight:600;text-decoration:none;background:var(--gold);color:#2a0f4d;border:2px solid var(--gold);transition:transform .15s,box-shadow .15s}
-.btn:hover{transform:translateY(-2px);box-shadow:0 8px 0 -2px rgba(42,15,77,.35)}
-.btn.ghost{background:transparent;color:#fff;border-color:var(--p-soft)}
-.btn.sm{padding:.5rem 1.15rem;font-size:.95rem}
-header{position:sticky;top:0;z-index:20;background:var(--p-deep);color:#fff;border-bottom:3px solid var(--gold)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:68px}
-.logo{font-family:var(--fd);font-weight:800;font-size:1.3rem;text-decoration:none;display:flex;align-items:center;gap:.4rem;white-space:nowrap;flex-shrink:0}
-.logo i{width:34px;height:34px;border-radius:9px;background:var(--p);display:grid;place-items:center;font-style:normal;color:var(--gold);font-size:.8rem;border:2px solid var(--p-soft);flex-shrink:0}
-.logo span{color:var(--gold);font-size:.85rem;font-weight:600}
-nav ul{list-style:none;padding:0;display:flex;gap:.2rem;align-items:center}
-nav a{text-decoration:none;padding:.5rem .85rem;border-radius:8px;font-size:.96rem;color:#e8dcfa}
-nav a:hover,nav a[aria-current]{background:var(--p-dark);color:#fff}
-nav a.btn{color:#2a0f4d;background:var(--gold)}
-#tog{display:none}
-.burger{display:none;cursor:pointer;font-size:1.6rem;padding:.3rem .6rem}
-
-.page-hero{background:radial-gradient(800px 420px at 90% 0,#5a22a0 0,transparent 60%),var(--p-deep);color:#fff;padding:3.2rem 0 4rem}
-.crumb{font-size:.9rem;color:var(--p-soft);margin-bottom:1.4rem}
-.crumb a{text-decoration:none}
-.crumb a:hover{color:var(--gold)}
-.page-hero h1{font-size:clamp(2rem,4.2vw,3.2rem);font-weight:800;max-width:22ch}
-.page-hero p{margin-top:1.2rem;max-width:60ch;color:#dccdf5;font-size:1.08rem}
-
-.layout{display:grid;grid-template-columns:290px 1fr;gap:3rem;padding:4rem 0}
-aside.side{position:sticky;top:96px;align-self:start;display:grid;gap:1.2rem}
-.toc{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.3rem}
-.toc h4{font-size:1.05rem;margin-bottom:.6rem;color:var(--p)}
-.toc ul{list-style:none;padding:0}
-.toc a{display:block;padding:.4rem .6rem;border-radius:8px;text-decoration:none;color:var(--muted);font-size:.95rem}
-.toc a:hover{background:var(--p-mist);color:var(--p)}
-.help{background:var(--p);color:#fff;border-radius:18px;padding:1.4rem;box-shadow:8px 8px 0 var(--gold)}
-.help h4{font-size:1.15rem;margin-bottom:.4rem}
-.help p{font-size:.93rem;color:#eadcff;margin-bottom:1rem}
-
-.group{margin-bottom:3rem}
-.group>h2{font-size:clamp(1.5rem,2.8vw,2rem);margin-bottom:1.1rem;padding-left:1rem;border-left:6px solid var(--p)}
-.group:nth-of-type(2)>h2{border-color:var(--gold)}
-.group:nth-of-type(3)>h2{border-color:var(--green)}
-details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:.8rem;transition:border-color .2s}
-details[open]{border-color:var(--p)}
-summary{cursor:pointer;list-style:none;padding:1.1rem 1.4rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";flex:none;width:30px;height:30px;border-radius:50%;background:var(--p-mist);color:var(--p);display:grid;place-items:center;font-size:1.3rem;transition:transform .2s}
-details[open] summary::after{transform:rotate(45deg);background:var(--gold);color:#2a0f4d}
-summary h3{font-size:1.1rem;font-weight:600;font-family:var(--fb)}
-.ans{padding:0 1.4rem 1.3rem;color:var(--muted)}
-.ans p{margin-bottom:.8rem}
-.ans h4{font-size:1rem;color:var(--p);margin:.9rem 0 .3rem}
-.ans ul{padding-left:1.2rem;margin-bottom:.6rem}
-.ans table{width:100%;border-collapse:collapse;font-size:.94rem;margin:.4rem 0 .8rem}
-.ans td{padding:.4rem 0;border-bottom:1px solid var(--line)}
-.ans td:last-child{text-align:right;color:var(--ink);font-weight:600}
-.ex{background:var(--p-mist);border-radius:12px;padding:.9rem 1.1rem;font-size:.95rem}
-.ans a{color:var(--p);font-weight:600}
-
-.warn{padding:1.1rem 1.4rem;border:2px dashed var(--gold-deep);border-radius:14px;font-size:.95rem;color:var(--muted)}
-.warn b{color:var(--gold-deep)}
-.final{background:var(--p);color:#fff;text-align:center;padding:4rem 0}
-.final h2{font-size:clamp(1.7rem,3.2vw,2.4rem);margin-bottom:.8rem}
-.final p{max-width:56ch;margin:0 auto 1.6rem;color:#eadcff}
-.final .cta{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
-footer{background:#12062a;color:#bfb0da;padding:3rem 0 2rem;font-size:.92rem}
-footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem}
-footer h3{color:#fff;font-size:1.2rem;margin-bottom:.6rem}
-footer h4{color:var(--gold);font-size:1rem;margin-bottom:.6rem}
-footer ul{list-style:none;padding:0}
-footer li{margin-bottom:.35rem}
-footer a{text-decoration:none}
-footer a:hover{color:var(--gold)}
-.copy{grid-column:1/-1;border-top:1px solid #2f1a52;padding-top:1.2rem;font-size:.85rem}
-
-@media(max-width:860px){
-  .layout,footer .wrap{grid-template-columns:1fr}
-  aside.side{position:static}
-  .burger{display:block}
-  nav{position:absolute;top:68px;left:0;right:0;background:var(--p-deep);display:none;padding:.8rem 4%}
-  nav ul{flex-direction:column;align-items:stretch}
-  #tog:checked~nav{display:block}
-}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="theme/style.css">
 </head>
 <body>
 
@@ -134,10 +37,11 @@ footer a:hover{color:var(--gold)}
       <ul>
         <li><a href="index.html">Trang chủ</a></li>
         <li><a href="gioithieu.html">Giới thiệu</a></li>
-        <li><a href="index.html#kien-thuc">Kiến thức giao dịch</a></li>
-        <li><a href="index.html#tai-ung-dung">Tải ứng dụng</a></li>
+        <li><a href="kien-thuc-giao-dich.html">Kiến thức giao dịch</a></li>
+        <li><a href="tai-ung-dung.html">Tải ứng dụng</a></li>
         <li><a href="faq.html" aria-current="page">Câu hỏi thường gặp</a></li>
-        <li><a class="btn sm" href="ungdung.html" target="_blank" rel="noopener">Mở tài khoản</a></li>
+        <li><a href="tin-tuc.html">Tin tức</a></li>
+        <li><a class="btn sm" href="tai-ung-dung.html" target="_blank" rel="noopener">Mở tài khoản</a></li>
       </ul>
     </nav>
   </div>
@@ -154,18 +58,18 @@ footer a:hover{color:var(--gold)}
 
 <div class="wrap layout">
   <aside class="side">
-    <nav class="toc" aria-label="Chủ đề câu hỏi">
+    <div class="toc" role="navigation" aria-label="Chủ đề câu hỏi">
       <h4>Chủ đề</h4>
       <ul>
         <li><a href="#co-ban">Kiến thức cơ bản</a></li>
         <li><a href="#giao-dich">Giao dịch và rủi ro</a></li>
         <li><a href="#mo-tai-khoan">Mở tài khoản</a></li>
       </ul>
-    </nav>
+    </div>
     <div class="help">
       <h4>Muốn bắt đầu giao dịch?</h4>
       <p>Mở tài khoản phái sinh trực tuyến qua đối tác chứng khoán của Kim Thương.</p>
-      <a class="btn sm" href="ungdung.html" target="_blank" rel="noopener">Mở tài khoản</a>
+      <a class="btn sm" href="tai-ung-dung.html" target="_blank" rel="noopener">Mở tài khoản</a>
     </div>
   </aside>
 
@@ -254,7 +158,7 @@ footer a:hover{color:var(--gold)}
         <div class="ans">
           <p>Thông thường cần giấy tờ tuỳ thân, tài khoản ngân hàng và đáp ứng điều kiện về kiến thức, kinh nghiệm theo quy định của công ty chứng khoán.</p>
           <h4>Bước tiếp theo</h4>
-          <p>Bạn có thể <a href="ungdung.html" target="_blank" rel="noopener">mở tài khoản trực tuyến tại đây</a> và làm theo hướng dẫn của đối tác.</p>
+          <p>Bạn có thể <a href="tai-ung-dung.html" target="_blank" rel="noopener">mở tài khoản trực tuyến tại đây</a> và làm theo hướng dẫn của đối tác.</p>
         </div>
       </details>
 
@@ -277,7 +181,7 @@ footer a:hover{color:var(--gold)}
     <h2>Đã hiểu rõ và sẵn sàng bắt đầu?</h2>
     <p>Mở tài khoản phái sinh trực tuyến hoặc quay lại phần kiến thức để học thêm.</p>
     <div class="cta">
-      <a class="btn" href="ungdung.html" target="_blank" rel="noopener">Mở tài khoản VN30F</a>
+      <a class="btn" href="tai-ung-dung.html" target="_blank" rel="noopener">Mở tài khoản VN30F</a>
       <a class="btn ghost" href="index.html">Về trang chủ</a>
     </div>
   </div>
@@ -292,14 +196,16 @@ footer a:hover{color:var(--gold)}
     </div>
     <div>
       <h4>Điều hướng</h4>
-      <ul><li><a href="index.html">Trang chủ</a></li><li><a href="gioithieu.html">Giới thiệu</a></li><li><a href="index.html#kien-thuc">Kiến thức giao dịch</a></li><li><a href="index.html#tai-ung-dung">Tải ứng dụng</a></li><li><a href="faq.html">Câu hỏi thường gặp</a></li></ul>
+      <ul><li><a href="index.html">Trang chủ</a></li><li><a href="gioithieu.html">Giới thiệu</a></li><li><a href="kien-thuc-giao-dich.html">Kiến thức giao dịch</a></li><li><a href="tai-ung-dung.html">Tải ứng dụng</a></li><li><a href="faq.html">Câu hỏi thường gặp</a></li></ul>
     </div>
     <div>
       <h4>Liên hệ</h4>
-      <ul><li>Zalo/Hotline: 09xx xxx xxx</li><li>Email: lienhe@vn30fkimthuong.com</li><li><a href="ungdung.html" target="_blank" rel="noopener">Mở tài khoản</a></li></ul>
+      <ul><li>Zalo/Hotline: 09xx xxx xxx</li><li>Email: lienhe@vn30fkimthuong.com</li><li><a href="tai-ung-dung.html" target="_blank" rel="noopener">Mở tài khoản</a></li></ul>
     </div>
     <p class="copy">© 2026 VN30F Kim Thương. Đầu tư phái sinh có rủi ro cao; nội dung chỉ mang tính tham khảo, không phải lời khuyên đầu tư.</p>
   </div>
 </footer>
+
+<script src="theme/main.js" defer></script>
 </body>
 </html>
