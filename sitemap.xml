@@ -1,35 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!--- trang chủ -->
   <url>
     <loc>https://vn30fkimthuong.github.io/</loc>
     <lastmod>2026-11-25</lastmod>
   </url>
 
+  <!--- trang giới thiệu -->
   <url>
     <loc>https://vn30fkimthuong.github.io/gioi-thieu.html</loc>
     <lastmod>2026-11-25</lastmod>
   </url>
 
+  <!--- trang faq -->
   <url>
     <loc>https://vn30fkimthuong.github.io/faq.html</loc>
     <lastmod>2026-11-25</lastmod>
-    <priority>0.7</priority>
   </url>
 
+  <!--- trang tin tức -->
   <url>
     <loc>https://vn30fkimthuong.github.io/tin-tuc.html</loc>
     <lastmod>2026-11-25</lastmod>
   </url>
 
+  <!--- trang tải ứng dụng -->
   <url>
     <loc>https://vn30fkimthuong.github.io/tai-ung-dung.html</loc>
     <lastmod>2026-11-25</lastmod>
   </url>
 
+  <!--- bài viết 1 -->
   <url>
     <loc>https://vn30fkimthuong.github.io/bai-viet/kien-thuc/hop-dong-tuong-lai-vn30-la-gi.html</loc>
     <lastmod>2026-11-26</lastmod>
   </url>
+
+  <!--- bài viết 2 -->
+  <url>
+    <loc>https://vn30fkimthuong.github.io/bai-viet/kien-thuc/chung-khoan-phai-sinh.html</loc>
+    <lastmod>2026-11-27</lastmod>
+  </url>  
+
+  <!--- bài viết 3 -->
+  <url>
+    <loc>https://vn30fkimthuong.github.io/bai-viet/nhan-dinh/nhan-dinh-vn30-27-11-26.html</loc>
+    <lastmod>2026-11-27</lastmod>
+  </url>    
 
 </urlset>
